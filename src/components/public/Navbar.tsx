@@ -24,7 +24,7 @@ export default function Navbar({ lang = 'es' }: { lang?: 'es' | 'en' }) {
   const links = navLinks[lang]
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-md shadow-lg" style={{background: 'rgba(15,26,46,0.97)', borderBottom: '1px solid rgba(244,160,32,0.2)'}}>
+    <nav className="fixed top-0 w-full z-50 shadow-lg" style={{background: '#000000', borderBottom: '1px solid rgba(244,160,32,0.2)'}}>
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -58,7 +58,7 @@ export default function Navbar({ lang = 'es' }: { lang?: 'es' | 'en' }) {
       </div>
 
       {open && (
-        <div className="md:hidden px-4 py-4 flex flex-col gap-4" style={{background: '#0f1a2e', borderTop: '1px solid rgba(244,160,32,0.2)'}}>
+        <div className="md:hidden px-4 py-4 flex flex-col gap-4" style={{background: '#000000', borderTop: '1px solid rgba(244,160,32,0.2)'}}>
           {links.map(l => (
             <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-slate-300 font-medium hover:text-white">
               {l.label}

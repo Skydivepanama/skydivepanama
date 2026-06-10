@@ -4,6 +4,7 @@ import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { Upload, Trash2, Eye, EyeOff, Loader2 } from 'lucide-react'
 import type { GalleryItem } from '@/types'
+import InstagramImport from './InstagramImport'
 
 export default function GalleryManager({ items }: { items: GalleryItem[] }) {
   const router = useRouter()
@@ -40,6 +41,9 @@ export default function GalleryManager({ items }: { items: GalleryItem[] }) {
 
   return (
     <div>
+      {/* Instagram Import */}
+      <InstagramImport />
+
       {/* Upload */}
       <div className="bg-white rounded-2xl shadow border border-slate-100 p-6 mb-8">
         <h2 className="text-lg font-bold text-slate-800 mb-4">Subir nuevo archivo</h2>
