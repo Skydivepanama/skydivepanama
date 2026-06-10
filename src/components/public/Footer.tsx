@@ -28,8 +28,8 @@ export default function Footer() {
             <a href="https://instagram.com/skydivepanama" target="_blank" rel="noopener" className="hover:text-white transition-colors">
               Instagram: @skydivepanama
             </a>
-            <a href="https://wa.me/50700000000" className="hover:text-white transition-colors">
-              WhatsApp
+            <a href="https://wa.me/50761987991" target="_blank" rel="noopener" className="hover:text-white transition-colors">
+              WhatsApp: +507 6198-7991
             </a>
             <a href="mailto:info@skydivepanama.net" className="hover:text-white transition-colors">
               info@skydivepanama.net
