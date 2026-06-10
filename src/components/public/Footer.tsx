@@ -7,9 +7,9 @@ export default function Footer() {
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://skydivepanama.com/wp-content/uploads/2021/05/logo-home-logo-image-negro.jpg"
+            src="/logo-dark.jpg"
             alt="Skydive Panama"
-            className="h-12 mb-3 brightness-200"
+            className="h-12 mb-3"
           />
           <p className="text-sm" style={{color: '#94a3b8'}}>La experiencia más emocionante de Panamá. Salta desde el cielo y vive algo único.</p>
         </div>
