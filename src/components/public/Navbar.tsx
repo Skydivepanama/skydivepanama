@@ -9,13 +9,13 @@ const navLinks = {
     { href: '/', label: 'Inicio' },
     { href: '/gallery', label: 'Galería' },
     { href: '/book', label: 'Reservar' },
-    { href: '/contact', label: 'Contacto' },
+    { href: '/terms', label: 'Términos' },
   ],
   en: [
     { href: '/', label: 'Home' },
     { href: '/gallery', label: 'Gallery' },
     { href: '/book', label: 'Book Now' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/terms', label: 'Terms' },
   ],
 }
 
@@ -24,29 +24,31 @@ export default function Navbar({ lang = 'es' }: { lang?: 'es' | 'en' }) {
   const links = navLinks[lang]
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-sky-100 shadow-sm">
+    <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2 font-bold text-sky-700 text-xl">
-          <span>🪂</span>
-          <span>Skydive Panama</span>
+        <Link href="/" className="flex items-center gap-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://skydivepanama.com/wp-content/uploads/2021/05/logo-home-logo-image-negro.jpg"
+            alt="Skydive Panama"
+            className="h-10 w-auto"
+          />
         </Link>
 
-        {/* Desktop links */}
+        {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
           {links.map(l => (
-            <Link key={l.href} href={l.href} className="text-slate-700 hover:text-sky-600 font-medium transition-colors">
+            <Link key={l.href} href={l.href} className="text-slate-700 hover:text-orange-500 font-medium transition-colors text-sm">
               {l.label}
             </Link>
           ))}
-          <Link href="/book" className="bg-sky-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-sky-700 transition-colors">
+          <Link href="/book" className="text-white font-bold px-5 py-2 rounded-full text-sm transition-colors shadow"
+            style={{background: '#f4a020'}}
+            onMouseOver={e => (e.currentTarget.style.background = '#d4870a')}
+            onMouseOut={e => (e.currentTarget.style.background = '#f4a020')}
+          >
             {lang === 'es' ? '¡Reserva Ahora!' : 'Book Now!'}
           </Link>
-          <button
-            onClick={() => {}}
-            className="text-sm text-slate-500 hover:text-sky-600"
-          >
-            {lang === 'es' ? 'EN' : 'ES'}
-          </button>
         </div>
 
         {/* Mobile */}
@@ -56,13 +58,16 @@ export default function Navbar({ lang = 'es' }: { lang?: 'es' | 'en' }) {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white border-t border-sky-100 px-4 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-slate-100 px-4 py-4 flex flex-col gap-4">
           {links.map(l => (
             <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-slate-700 font-medium">
               {l.label}
             </Link>
           ))}
-          <Link href="/book" onClick={() => setOpen(false)} className="bg-sky-600 text-white text-center px-4 py-2 rounded-full font-semibold">
+          <Link href="/book" onClick={() => setOpen(false)}
+            className="text-white text-center px-4 py-2 rounded-full font-bold"
+            style={{background: '#f4a020'}}
+          >
             {lang === 'es' ? '¡Reserva Ahora!' : 'Book Now!'}
           </Link>
         </div>

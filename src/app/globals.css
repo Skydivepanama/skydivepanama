@@ -3,6 +3,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --navy: #1a2744;
+  --navy-dark: #0f1a2e;
+  --navy-light: #243258;
+  --orange: #f4a020;
+  --orange-dark: #d4870a;
+  --orange-light: #fbb840;
+}
+
+@theme inline {
+  --color-navy: #1a2744;
+  --color-navy-dark: #0f1a2e;
+  --color-navy-light: #243258;
+  --color-orange: #f4a020;
+  --color-orange-dark: #d4870a;
+  --color-orange-light: #fbb840;
 }
 
 body {
@@ -12,11 +27,15 @@ body {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 50%, #38bdf8 100%);
+  background: linear-gradient(135deg, #0f1a2e 0%, #1a2744 50%, #243258 100%);
+}
+
+.hero-gradient-accent {
+  background: linear-gradient(135deg, #1a2744 0%, #243258 60%, #f4a020 100%);
 }
 
 .chat-bubble-user {
-  background: #0ea5e9;
+  background: #f4a020;
   color: white;
   border-radius: 18px 18px 4px 18px;
 }
@@ -26,3 +45,23 @@ body {
   color: #1e293b;
   border-radius: 18px 18px 18px 4px;
 }
+
+/* Orange CTA buttons */
+.btn-orange {
+  background: #f4a020;
+  color: white;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: background 0.2s;
+}
+.btn-orange:hover { background: #d4870a; }
+
+/* Navy buttons */
+.btn-navy {
+  background: #1a2744;
+  color: white;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: background 0.2s;
+}
+.btn-navy:hover { background: #0f1a2e; }
